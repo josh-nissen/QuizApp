@@ -1,3 +1,24 @@
 <resources>
     <string name="app_name">QuizApp</string>
+    <string name="q1">What type of animal is an Alpaca?</string>
+    <string name="q1a1">Camelid</string>
+    <string name="q1a2">Donkey</string>
+    <string name="q1a3">Llama</string>
+    <string name="q1a4">What?</string>
+    <string name="q2">What is an official color of an Alpaca? (Select all that apply)</string>
+    <string name="q2a1">Rose Grey</string>
+    <string name="q2a2">Purple</string>
+    <string name="q2a3">White</string>
+    <string name="q2a4">Dark Fawn</string>
+    <string name="q3">What are the two types/breeds of Alpaca? (Select all that apply)</string>
+    <string name="q3a1">Huacaya</string>
+    <string name="q3a2">Doberman</string>
+    <string name="q3a3">Argentinian</string>
+    <string name="q3a4">Suri</string>
+    <string name="q4">A male Alpaca that has been neutered is called a:</string>
+    <string name="q4a1">Mare</string>
+    <string name="q4a2">Gelding</string>
+    <string name="q4a3">Herd Sire</string>
+    <string name="q4a4">Dame</string>
+    <string name="q5">What is the website for the Alpaca Owners Association of America?</string>
 </resources>
