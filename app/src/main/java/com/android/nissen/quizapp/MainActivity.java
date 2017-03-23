@@ -1,6 +1,7 @@
 package com.android.nissen.quizapp;
 
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -8,6 +9,7 @@ import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RadioButton;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -33,10 +35,7 @@ public class MainActivity extends AppCompatActivity {
         CheckBox a3 = (CheckBox) findViewById(R.id.question2a3);
         CheckBox a4 = (CheckBox) findViewById(R.id.question2a4);
 
-        if(a2.isChecked())
-            return;
-
-        if( a1.isChecked() && a3.isChecked() && a4.isChecked())
+        if( a1.isChecked() && !a2.isChecked() && a3.isChecked() && a4.isChecked())
             numRight++;
     }
 
@@ -78,20 +77,26 @@ public class MainActivity extends AppCompatActivity {
         question4();
         question5();
         displayCorrect();
+        numRight = 0;
     }
 
     public void displayCorrect()
     {
-        AlertDialog.Builder numCorrect = new AlertDialog.Builder(MainActivity.this);
-        numCorrect.setTitle("Quiz Results");
-        numCorrect.setMessage("You got " + numRight + " out of 5 correct!");
-        numCorrect.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
+        Context context = getApplicationContext();
+        CharSequence text1 = "Congratulations, you got " + numRight + " out of 5 correct!";
+        CharSequence text2 = "You should study more, you only got " + numRight + " correct.";
+        int duration = Toast.LENGTH_LONG;
 
-            }
-        });
-        numCorrect.show();
+        if(numRight >= 3)
+        {
+            Toast toastA = Toast.makeText(context, text1, duration);
+            toastA.show();
+        }
+        else
+        {
+            Toast toastB = Toast.makeText(context, text2, duration);
+            toastB.show();
+        }
     }
 
 }
